@@ -4,10 +4,10 @@ services:
     build:
       context: .
       dockerfile: ./.image/owntone/Dockerfile
+    volumes:
+      - .docker-data:/srv/music
     restart: always
-      # network_mode: host
-    ports:
-      - "8080:3689"
+    network_mode: host
     logging:
       driver: json-file
       options:
